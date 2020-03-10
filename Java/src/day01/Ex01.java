@@ -47,6 +47,8 @@ public class Ex01 {
 		System.out.println("¸¸¿ø±Ç : " + don/man);
 		System.out.println( don );
 		
+		
+		
 	}
 
 }

@@ -1,0 +1,72 @@
+package day02;
+
+import java.util.*;
+
+public class sol {
+	/*
+ 	1. 5, 10, 20 을 제외한 숫자하나를 가정하고 (양수, 음수 모두)
+ 	이것을 2진수로 바꿔보고
+ 	실제프로그램의 결과와 일치하는지 확인하세요.
+ --------------------------------------------------------
+ 
+ 	2. 반지름이 7인 원의 넓이, 둘레를 계산해서 출력하세요.
+ 		원의 둘레 : 2*반지름 * 3.14
+ 		원의 넓이 : 반지름 * 반지름* 3.14
+ 		단, 반지름, 둘레, 넓이는 변수를 만들어서 처리를 하세요
+ 		둘레는 flot 타입의 변수로 만드세요
+ 		
+ 	3. 두개의 숫자(정수) 변수에 담고
+ 		두수를 가로, 세로로 하는 사각형의 넓이를 구하세요.
+ 	4. 3번문제에 두수를 밑변과 높이로 가지는 삼각형의 넓이를 구하세요
+ 	5. 54232원을 지불해야한다.
+ 		우리나라에 화폐로 각 단위가 몇개나 필요한지 계산해서 출력하세요.
+ 숙제] 1년은 365.2426일이다.
+ 		이 날짜는 과연 몇일 몇시간, 몇분, 몇초인지 계산해서 출력하세요.
+ 		 */
+	public static void main(String[] args) {
+		/*double data = 365.2426;
+		int day = (int)data;
+		int sec = (int)((data % 1) * 24 * 60 * 60);
+		//0.2426일  ==> 0.2426 * 24(시간)
+		//			==> 0.2426 * 24 * 60(분)
+		//			==> 0.2426 * 24 * 60 * 60(초)
+		
+		int hour = sec / 3600;
+		
+		sec %= 3600;
+		
+		int min = sec / 60;
+		
+		sec %= 60;
+		
+		System.out.println("일년은 " +  day + "일, " + hour + "시간, " + min + "분, " +  sec +" 초 입니다. ");
+		*/
+		double pi = 3.14;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("반지름을 입력하세요 :  ");
+		int ban =  sc.nextInt();
+
+		double dul = ban *2 * pi;
+		double nul = Math.pow(ban, 2) *3.14;
+		System.out.println("원의 둘레는 : " + dul );
+		System.out.println("원의 넓이는 : " + nul );
+		
+
+		System.out.print("가로를 입력하세요 : " );
+		int garo = sc.nextInt();
+				
+	
+		System.out.print("세로를 입력하세요 : " );
+		int sero = sc.nextInt();
+		sc.close();
+		
+		int sagak = garo * sero;
+		double samgak = garo * sero *0.5;
+		
+		System.out.println("사각형의 넓이는 : " + sagak);
+		System.out.println("삼각형의 넓이는 : " + samgak);
+		
+		
+	}
+
+}
