@@ -75,7 +75,7 @@ public class Ex01 {
 		단, 삼항 연산자를 사용해서 처리하세요.
   */
 		int asc = (int)(Math.random()*(255));
-		System.out.println("문제 2 : " + (char)asc +" "+ (('A' <= asc &  asc <= 'Z') ? ("영문자") :('a' <= asc &  asc <='z') ? ("영문자") : ("영문자아님")));
+		System.out.println("문제 2 : " + asc +" "+ (('A' <= asc &&  asc <= 'Z') ? ("영문자") :('a' <= asc &&  asc <='z') ? ("영문자") : ("영문자아님")));
 	/*
 	 문제 3]
 		화씨(Fahrenheit) 온도 100도는 
@@ -139,7 +139,7 @@ public class Ex01 {
 		System.out.print("연도를 입력하세요 : ");
 		int year = sc1.nextInt();
 		sc.close();
-		String str = (year % 4 == 0)? ((year % 100 == 0)?  ((year % 400 == 0)? "윤년" :"평년") : "평년") : "평년";
+		String str = (year % 4 == 0)? ((year % 100 == 0) ?  ((year % 400 == 0) ? "윤년" :"평년") : "평년") : "평년";
 		System.out.println(str);
 		
 	}
