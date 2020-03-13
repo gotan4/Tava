@@ -11,7 +11,17 @@ package day04;
 public class Hw04 {
 
 	public static void main(String[] args) {
-		for (int i = 0; i < args.length; i++) {
+		int tHeight = 7564;
+		for (int i = 0; ; i++) {//1초 지난후 올라가는 사람의 높이는 
+				double h1 = 0.54 * i;
+				double h2 = tHeight-(1.07 * i);
+					
+				if(h1 > h2 ) {
+					System.out.println("올라가는 사람의 높이 : " + h1);
+					System.out.println("내려가는 사람의 높이 : " + h2);
+					System.out.println("두사람이 만난 직후 시간 : " + i/60 + "분 " + i%60 +" 초");
+					break;		
+			}
 			
 		}
 	}
