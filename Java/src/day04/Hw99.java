@@ -333,8 +333,25 @@ public class Hw99 {
 
 				System.out.println();
 			}
+		case 15:
+			System.out.println("15. ");
+			char alpa11 ='A';
+			for (int i = 0; i < 5; i++) {
+				for (int j = 0; j < 5; j++) {
+					int a = ((i + 'A') + 5 * j);
+					System.out.print((char)a + " ");
+				
+				}
+				System.out.println();
 
+			}
+			break;
+		case 16:
+			for (int i = 0; i < args.length; i++) {
+				
+			}
 		}
+
 	}
 }
 
