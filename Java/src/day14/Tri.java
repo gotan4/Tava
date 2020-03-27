@@ -1,50 +1,36 @@
 package day14;
-/*
- 문제2]
-	삼각형 클래스를 작성하고
-	
-	삼각형 클래스의 밑변과 높이를 입력해서 객체를 만들도록 작성하고 
-	만약 밑변이 같으면 같은 삼각형이 되도록
-	equals 함수를 오버라이드 하고
-	테스트 하세요.	
-	
-	입력은 JOptionPane 소속의 함수로 처리하고
-	출력도 같은 소속의 함수로 처리하세요.
-	추가로 예외처리도 해주세요.
-		
- */
+
 public class Tri {
-	private int mit;
-	private int nop;
+	// 이 클래스가 기억할 정보 저장 변수
+	private int width, height;
 	private double area;
 	
-
-	public Tri(int mit, int nop) {
-		this.mit = mit;
+	// 기본 생성자 함수
+	public Tri() {}
+	
+	// 생성자 함수 오버로딩
+	public Tri(int width, int height) {
+		this.width = width;
+		this.height = height;
 		setArea();
-		
 	}
 	
+	// 면적 구해서 입력하는 함수
 	public void setArea() {
-		area = mit * nop * 0.5;
-	}
-	public double getArea() {
-		return this.area;
-		
-	}
-	public boolean equals(Object obj) {
-		boolean bool = false;
-		
-		Tri t = (Tri) obj;
-		
-		bool = (this.area == t.area) ? true : false;
-		// 결과 반환해주고....
-		return bool;
-		
-	}
-	public toString() {
-		
+		area = width * height * 0.5;
 	}
 	
-		
+	public double getArea() {
+		return area;
+	}
+	
+	// 이 클래스의 정보를 문자열로 반환해주는 toString() 오버라이딩
+	public String toString() {
+		return "\t\t밑변 : " + width + "\n\t\t높이 : " + height + "\n\t\t넓이 : " + area + "\n인 삼각형\n";
+	}
+	
+	// 이 클래스가 밑변이 같으면 같은 객체로 판단해주는 기능의 equals 함수 오버라이딩
+	public boolean equals(Object obj) {
+		return this.width == ((Tri) obj).width;
+	}
 }
