@@ -1,0 +1,19 @@
+숙제 1 ]
+	Calendar 클래스의 
+		1. set()
+		2. getTimeInMillis()
+		3. getActualMaximum()
+		4. add()
+		5. roll()
+		6. after()
+		7. before()
+	를 의미와 사용법을 공부하세요.
+	
+	
+숙제 2 ]
+	
+	Vector, ArrayList의 함수들의 10개정도 의미와 사용법을 공부해오세요...!
+	
+	
+	
+	List list = new ArrayList();
