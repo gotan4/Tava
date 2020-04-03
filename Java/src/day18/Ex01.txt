@@ -1,0 +1,5 @@
+kor=85
+eng=95
+math=80
+physic=95
+code=90

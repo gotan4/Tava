@@ -1,0 +1,4 @@
+name=lee jin soo
+age=27
+tel=010-1111-1111
+add=\uc11c\uc6b8\uc2dc \ub3c5\uc0b0\ub3d9

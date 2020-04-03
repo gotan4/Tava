@@ -1,0 +1,4 @@
+name=lee jin soo
+age=27
+tel=010-1111-1111
+add=서울시 독산동
