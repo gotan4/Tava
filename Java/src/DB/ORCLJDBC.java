@@ -14,9 +14,18 @@ public class ORCLJDBC {
 		이 클래스를 new 시키는 순간
 		기본적으로 가장 필요한 드라이버로딩 작업을 동시에 실행할 것이다.
 	 */
-	private Connection con = null;
+	private String user;
+	private String pw;
+	private String url;
 	
 	public ORCLJDBC() {
+		this("jdbc:oracle:thin:@localhost:1521:orcl", "hello", "hello");
+	}
+	
+	public ORCLJDBC(String url, String user, String pw) {
+		this.user = user;
+		this.pw = pw;
+		this.url = url;
 		try {
 			// 드라이버 로딩하고
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -27,26 +36,30 @@ public class ORCLJDBC {
 	
 	// 커넥션 얻어오는 함수
 	public Connection getCon() {
-		return getCon("hello", "hello");
-	}
-	
-	public Connection getCon(String user, String pw) {
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		try {
 			con = DriverManager.getConnection(url, user, pw);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		this.con = con;
 		return con;
 	}
 	
 	// Statement 얻어오는 함수
-	public Statement getSTMT() {
+	public Statement getSTMT(Connection con) {
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			/*
+				* ReusltSet의 Type
+					1) TYPE_FORWARD_ONLY : scroll이 불가능한 forwad only 형
+					2) TYPE_SCROLL_INSENSITIVE : scroll은 가능하나, 변경된 사항은 적용되지 않음
+					3) TYPE_SCROLL_SENSITIVE : scroll은 가능하며, 변경된 사항이 적용됨
+	
+				* CONCURRENCY의 TYPE
+					1) CONCUR_READ_ONLY : resultset object의 변경이 불가능
+					2) CONCUR_UPDATABLE : resultset object의 변경이 가능
+			*/
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -55,7 +68,7 @@ public class ORCLJDBC {
 	}
 	
 	// PreparedStatement 얻어오는 함수
-	public PreparedStatement getPSTMT(String sql) {
+	public PreparedStatement getPSTMT(Connection con, String sql) {
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

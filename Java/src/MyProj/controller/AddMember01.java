@@ -5,8 +5,23 @@ import MyProj.VO.*;
 import java.util.*;
 import javax.swing.*;
 public class AddMember01 {
+/*
+			
+		ALTER TABLE
+		    member
+		add(
+		    joinDate Date default sysdate
+		        CONSTRAINT MEMB_JOIN_NN NOT NULL
+		);
 
+ */
 	public AddMember01() {
+		joinSeo();
+		
+	}
+	
+	// 서동혁씨 가입 함수
+	public void joinSeo() {
 		// 회원 한명을 추가해 보자.
 		// 회원 데이터는  VO 에 담아서 넘겨주기로 약속했으므로 VO를 준비한다.
 		
@@ -32,7 +47,9 @@ public class AddMember01 {
 			JOptionPane.showMessageDialog(null, mVO.getName() + " 님이 가입이 거절 되었습니다.");
 		}
 	}
-
+	
+	
+	
 	public static void main(String[] args) {
 		new AddMember01();
 	}
